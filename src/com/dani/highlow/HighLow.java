@@ -1,19 +1,31 @@
 package com.dani.highlow;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HighLow
 {
 
     public static void main( String[] args ) throws InterruptedException
     {
-        int[] arrayWithNumbers = new int[500000000];
+        List<Integer> arrayWithIntegers = new ArrayList<Integer>();
 
-        for( int i = 0; i < arrayWithNumbers.length; i++ )
+        for( int i = 0; i < 50000000*2; i++ )
         {
-            arrayWithNumbers[i] = (int)( Math.random() * 100 );
-            // System.out.println(arrayWithNumbers[i]);
+            arrayWithIntegers.add( (int)( Math.random() * 100 ) );
+        }
+        
+        for( int i = 0; i < 50000000*2; i++ )
+        {
+            arrayWithIntegers.add( (int)( Math.random() * 100 ) );
+        }
+        
+        for( int i = 0; i < 50000000*2; i++ )
+        {
+            arrayWithIntegers.add( (int)( Math.random() * 100 ) );
         }
 
-        new HighLowCalculator().calculateHighLow( arrayWithNumbers );
+        new HighLowCalculator().calculateHighLow( arrayWithIntegers );
 
     }
 
